@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>2023년 5월 31일 실습</title>
+        <script>
+            function imgsize(obj){
+                var img = document.getElementById("myimg");
+                var sizevar = 1;
+
+                if(obj.wheelDelta > 0){
+                    sizevar -= 0.1;
+                    document.getElementById("myimg").style.width = img.width * sizevar + "px";
+                    document.getElementById("myimg").style.height = img.height * sizevar + "px";
+                }
+
+                if(obj.wheelDelta < 0){
+                    sizevar += 0.1;
+                    document.getElementById("myimg").style.width = img.width * sizevar + "px";
+                    document.getElementById("myimg").style.height = img.height * sizevar + "px";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h3>Prac.15</h3>
+        <hr>
+        <p>이미지 위에 휠을 위로 굴리면 이미지가 축소되고 아래로 굴리면 이미지가 확대됩니다.</p>
+        <img id="myimg" onwheel="imgsize(event)" src="1.png" width="200" height="300">
+    </body>
+</html>
